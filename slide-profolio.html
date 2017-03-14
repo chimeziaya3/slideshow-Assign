@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Show Pic Gallery</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700" rel="stylesheet">
+	<link rel="stylesheet" type="html" href="slideshowAssigments.html">>
+	<link rel="stylesheet" href="/lib/w3.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+</head>
+<body class="home_page">
+
+<header>
+
+	<nav class="container_nav">
+		
+			
+				<p class="name">CHIM ANYAOHA</p>
+			
+				<a href="slideshowAssigments.html" class="home_button">Home</a>
+			
+				<a href="slide-profolio.html" class="porfolio_button">Porfolio</a>
+			
+				<a href="#openModal" class="contact_button">Contact</p>
+			
+	</nav>
+</header>
+
+
+
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<h2 style="color: #606061">Contact me</h2>
+		<p style="color: #606061">ig: _chimsosuave</p>
+		<p style="color: #606061">FB: chimeziaya3</p>
+		<p style="color: #606061">Email: levelbychim@gmail.com</p>
+	</div>
+</div>
+
+	<br>
+  <br>
+  <br>
+</div>
+<div id="allSlides" class="w3-content">
+	<img class="mySlides" src="pic-homepage1.jpg" >
+	<img class="mySlides" src="pic-homepage4.jpg">
+	<img class="mySlides" src="pic-homepage2.jpg">
+	<img class="mySlides" src="pic-homepage3.jpg">
+</div>
+
+<div id="allSlides" class="w3-content" style="max-width:1200px">
+  <img class="mySlides" src="pic-homepage1.jpg" style="width:100%">
+  <img class="mySlides" src="pic-homepage4.jpg" style="width:100%">
+  <img class="mySlides" src="pic-homepage2.jpg" style="width:100%">
+  <img class="mySlides" src="pic-homepage3.jpg" style="width:100%"> 
+  <br>
+  <br>
+<table>
+	
+	<!-- WHere my pics will bw displayed. Each pic will have an opacity hover effect when the move is over it.
+	on click of my images it will display. each pic will ahve a white space between them the seperte them -->
+	<tr class="w3-row-padding w3-section">
+    	<td class="w3-col s4">
+      		<img class="demo w3-opacity w3-hover-opacity-off" src="pic-homepage1.jpg" style="width:100%" onclick="currentPic(1)">
+    	</td>
+    	<td class="w3-col s4">
+      		<img class="demo w3-opacity w3-hover-opacity-off" src="pic-homepage4.jpg" style="width:100%" onclick="currentPic(2)">
+		</td>
+    	<td class="w3-col s4">
+      		<img class="demo w3-opacity w3-hover-opacity-off" src="pic-homepage2.jpg" style="width:100%" onclick="currentPic(3)">
+      	</td>	
+    	<td class="w3-col s4">
+      		<img class="demo w3-opacity w3-hover-opacity-off" src="pic-homepage3.jpg" style="width:100%" onclick="currentPic(4)">
+    	</td>
+  	</tr>
+</table>
+<script>
+// the index is set to the firts pic meaning it displays the first pic first
+var slideIndex = 1;
+showPics(slideIndex);
+
+
+// shows the pic that is clicked
+function currentPic(n) {
+  showPics(slideIndex = n);
+}
+
+// How the slide show will move through pics. How the pics will be layed out
+function showPics(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  
+  x[slideIndex-1].style.display = "block";
+  
+}
+</script>
+</body>
+</html>
